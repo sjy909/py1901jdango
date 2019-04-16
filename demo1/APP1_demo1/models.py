@@ -5,7 +5,9 @@ from django.db import models
 
 class Book_list(models.Model):
     book_name = models.CharField(max_length=20)
-    book_pulish_date = models.DateField()
+    book_pulish_date = models.DateField(auto_now=True)
+    def __str__(self):
+        return self.book_name
 
 
 class Roles_list(models.Model):
