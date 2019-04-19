@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>投票结果</title>
+</head>
+<body>
+    {{q.question}}
+    {% for c in cs %}
+        {{c.choice}}{{c.vote}}票 <br>
+    {% empty %}
+        <h1>kong</h1>
+    {% endfor %}
+    <br>
+    <a href="/index/">返回</a>
+</body>
+</html>

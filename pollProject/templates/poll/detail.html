@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项</title>
+</head>
+<body>
+    <form action="/vote/{{q.id}}" method="post">
+        {{q.question}}
+        {% for choice in c %}
+            {{choice.choice}}<input type="radio" name="choice" value={{choice.id}}>
+
+        {% empty %}
+             <h2>空</h2>
+        {% endfor %}
+        <input type="submit" value="提交">
+    </form>
+    <a href="/index/">返回首页</a>
+</body>
+</html>

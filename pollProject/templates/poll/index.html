@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+    <h1>问题答卷</h1>
+    {% for question in q%}
+        <a href="/detail/{{question.id}}"><li>{{question.question}}</li></a>
+    {% empty %}
+        <h4>空</h4>
+    {%endfor%}
+
+</body>
+</html>
