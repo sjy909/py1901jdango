@@ -21,3 +21,18 @@ class Roles_list(models.Model):
     role_name = models.CharField(max_length=30)
     Roles_gerden = models.BooleanField()
     Roles_Book = models.ForeignKey("Book_list", on_delete=models.CASCADE)
+
+
+class Temp(models.Model):
+    name = models.CharField(max_length=20)
+
+
+class tempsmanage(models.Manager):
+    def create_u(self, name):
+        m = self.create(use=name)
+        return m
+
+
+class Temps(models.Model):
+    use = models.CharField(max_length=20)
+    t = tempsmanage()

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑</title>
+</head>
+<body>
+<form action="/booktest/updates/{{n.id}}/" method="post">
+        作者<input type="text" name="bname" value="{{n.book_name}}"><br>
+    {% for role in r %}
+        书籍：<input type="text" name="{{role.id}}" value="{{role.role_name}}">
+    {% empty %}
+        <h1>空</h1>
+    {% endfor %}
+        添加书籍：<input type="text" name="add" value="{{role.role_name}}">
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>

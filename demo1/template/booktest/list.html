@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>列表页</title>
+</head>
+<body>
+    <h1>展示</h1>
+    {% for book in book_list %}
+    <li><a href="/booktest/detail/{{book.id}}/">{{book.book_name}}</a></li>
+    <a href="/booktest/delete/{{book.id}}/">删除</a>
+    <a href="/booktest/update/{{book.id}}/">编辑</a>
+    <br>
+    <a href="/booktest/add/">添加</a>
+    {% empty %}
+        <h3>空</h3>
+    {% endfor %}
+
+    <a href="/booktest/index/">返回主页</a>
+</body>
+</html>

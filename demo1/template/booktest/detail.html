@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>详情页</title>
+</head>
+<body>
+    {{book.book_name}}
+    {% for hero in cs %}
+        <li>{{hero.role_name}}</li>
+    {% empty %}
+        <h3>没有</h3>
+    {% endfor %}
+</body>
+</html>

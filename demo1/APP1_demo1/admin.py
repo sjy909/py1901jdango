@@ -2,6 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 from .models import Book_list, Roles_list
+from .models import Temp, Temps
 
 
 # 关联注册
@@ -23,3 +24,6 @@ class Roles_listAdmin(admin.ModelAdmin):
 
 admin.site.register(Book_list, Book_listAdmin)
 admin.site.register(Roles_list, Roles_listAdmin)
+admin.site.register(Temps)
+admin.site.register(Temp)
+
