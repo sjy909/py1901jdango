@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑</title>
+</head>
+<body>
+    <form action="/updates/" method="post">
+        {% for q in qs %}
+            问题：<input type="text" name="question{{q.id}}" value="{{q.question}}"><br>
+            {% for c in q.choice_set.all %}
+                选择：<input type="text" name="choice{{c.id}}" value="{{c.choice}}"><br>
+                票数：<input type="text" name="vote{{c.id}}" value="{{c.vote}}"><br>
+            {% empty %}
+                <h1>选择为空</h1>
+            {% endfor %}
+        <hr>
+        {% empty %}
+            <h1>问题为空</h1>
+        {% endfor %}
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>
